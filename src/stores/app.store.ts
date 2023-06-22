@@ -4,7 +4,7 @@ import { RootStore } from './root.store'
 export class AppStore {
   rootStore: RootStore
 
-  count: number = 0
+  count: number = 2 ** 16
 
   constructor(rootStore: RootStore) {
     this.rootStore = rootStore
