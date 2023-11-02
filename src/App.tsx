@@ -1,5 +1,6 @@
 import { Box, Button, Code, Flex, Text, Title } from '@mantine/core'
 import { observer } from 'mobx-react-lite'
+
 import reactLogo from './assets/react.svg'
 import { useStores } from './stores'
 
@@ -17,15 +18,13 @@ export const App = observer(() => {
         </Box>
       </Flex>
       <Title order={1}>Vite + React</Title>
-      <Button variant="outline" uppercase onClick={() => appStore.increase()}>
+      <Button variant="outline" onClick={() => appStore.increase()}>
         count is {appStore.count}
       </Button>
-      <Text align="center">
+      <Text>
         Edit <Code>src/App.tsx</Code> and save to test HMR
       </Text>
-      <Text align="center" c="gray">
-        Click on the Vite and React logos to learn more
-      </Text>
+      <Text c="gray">Click on the Vite and React logos to learn more</Text>
     </Flex>
   )
 })
