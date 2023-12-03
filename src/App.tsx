@@ -1,31 +1,17 @@
-import { observer } from 'mobx-react-lite'
-import './App.css'
-import reactLogo from './assets/react.svg'
-import { useStores } from './stores'
+import { useState } from 'react'
 
-export const App = observer(function App() {
-  const { appStore } = useStores()
+export function App() {
+  const [count, setCount] = useState<number>(1)
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => appStore.increase()}>count is {appStore.count}</button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
+    <div className="flex h-screen w-screen items-center justify-center">
+      <button
+        className="rounded bg-blue-500 px-4 py-2 text-white outline-offset-4 transition-colors ease-in-out focus-within:outline-blue-500 hover:bg-blue-600 active:bg-blue-400"
+        onClick={() => setCount(count + 1)}>
+        {'Count: ' + count}
+      </button>
     </div>
   )
-})
+}
 
 export default App
